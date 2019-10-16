@@ -1,35 +1,46 @@
 import face_recognition
 import cv2
 import numpy as np
+import face_recognition
 
-# This is a demo of running face recognition on live video from your webcam. It's a little more complicated than the
-# other example, but it includes some basic performance tweaks to make things run a lot faster:
-#   1. Process each video frame at 1/4 resolution (though still display it at full resolution)
-#   2. Only detect faces in every other frame of video.
+import os
+# from object_detection.utils import dataset_utils
 
-# PLEASE NOTE: This example requires OpenCV (the `cv2` library) to be installed only to read from your webcam.
-# OpenCV is *not* required to use the face_recognition library. It's only required if you want to run this
-# specific demo. If you have trouble installing it, try any of the other demos that don't require it instead.
-
-# Get a reference to webcam #0 (the default one)
 video_capture = cv2.VideoCapture(0)
+# video_capture = open_cam_rtsp("rtsp://192.168.0.4/live1.sdp", 1280, 720, 200)
+def open_cam_rtsp(uri, width, height, latency):
+    gst_str = ('rtspsrc location={} latency={} ! '
+               'rtph264depay ! h264parse ! omxh264dec ! '
+               'nvvidconv ! '
+               'video/x-raw, width=(int){}, height=(int){}, format=(string)BGRx ! '
+               'videoconvert ! appsink').format(uri, latency, width, height)
+    return cv2.VideoCapture(gst_str, cv2.CAP_GSTREAMER)
 
-# Load a sample picture and learn how to recognize it.
-obama_image = face_recognition.load_image_file("obama.jpg")
-obama_face_encoding = face_recognition.face_encodings(obama_image)[0]
 
-# Load a second sample picture and learn how to recognize it.
-biden_image = face_recognition.load_image_file("biden.jpg")
-biden_face_encoding = face_recognition.face_encodings(biden_image)[0]
+# video_capture = cv2.VideoCapture("dron.mp4", cv2.IMREAD_GRAYSCALE)
 
-# Create arrays of known face encodings and their names
+instances = []
+
+# Load in the images
+for filepath in os.listdir('knn_examples/test/'):
+    instances.append(cv2.imread('knn_examples/test   /{0}'.format(filepath),0))
+
+print(type(instances[0]))
+
+first_person = face_recognition.load_image_file("test.png")
+first_face_encoding = face_recognition.face_encodings(first_person)[0]
+
+second_image = face_recognition.load_image_file("Shoxruxbek.jpg")
+second_face_encoding = face_recognition.face_encodings(second_image)[0]
+
 known_face_encodings = [
-    obama_face_encoding,
-    biden_face_encoding
+    first_face_encoding,
+    second_face_encoding
 ]
+
 known_face_names = [
-    "Barack Obama",
-    "Joe Biden"
+    "Ubaydullayev Johongir",
+    "Maxmudov Shoxruxbek"
 ]
 
 # Initialize some variables
@@ -75,30 +86,25 @@ while True:
 
     process_this_frame = not process_this_frame
 
-
     # Display the results
     for (top, right, bottom, left), name in zip(face_locations, face_names):
-        # Scale back up face locations since the frame we detected in was scaled to 1/4 size
         top *= 4
         right *= 4
         bottom *= 4
         left *= 4
 
-        # Draw a box around the face
-        cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)
+        cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 220), 2)
 
-        # Draw a label with a name below the face
-        cv2.rectangle(frame, (left, bottom - 35), (right, bottom), (0, 0, 255), cv2.FILLED)
+        # cv2.rectangle(frame, (left-35, bottom - 55), (right -35 , bottom), (0, 0, 255), cv2.FILLED)
         font = cv2.FONT_HERSHEY_DUPLEX
-        cv2.putText(frame, name, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1)
+        cv2.putText(frame, name, (left - 46, bottom + 26), font, 1.0, (0, 0, 220), 1)
 
     # Display the resulting image
     cv2.imshow('Video', frame)
 
     # Hit 'q' on the keyboard to quit!
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    if cv2.waitKey(25) & 0xFF == ord('q'):
         break
 
-# Release handle to the webcam
 video_capture.release()
 cv2.destroyAllWindows()
