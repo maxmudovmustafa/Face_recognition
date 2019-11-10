@@ -7,7 +7,7 @@ import pickle
 BASE_DIR = os.path.dirname(os.path.abspath((__file__)))
 img_dir = os.path.join(BASE_DIR, "image")
 face_cascade = cv2.CascadeClassifier(
-    "/home/warlock/Downloads/pych/face_recognition/data/haarcascade_frontalface_alt2.xml")
+    "/home/warlock/Downloads/pych/my_project_faced/data/haarcascade_frontalface_alt2.xml")
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 
@@ -39,9 +39,9 @@ for root, dirs, files in os.walk(img_dir):
                 y_labels.append(id_)
 print y_labels
 
-with open("/home/warlock/Downloads/pych/face_recognition/face_recognition_models/pickles/labels.pickles", "wb") as f:
+with open("/home/warlock/Downloads/pych/my_project_faced/face_recognition_models/pickles/labels.pickles", "wb") as f:
     pickle.dump(label_ids, f)
 
 print label_ids
 recognizer.train(x_train, np.array(y_labels))
-recognizer.save("/home/warlock/Downloads/pych/face_recognition/face_recognition_models/recognizers/trainner.yml")
+recognizer.save("/home/warlock/Downloads/pych/my_project_faced/face_recognition_models/recognizers/trainner.yml")

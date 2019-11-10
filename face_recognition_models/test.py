@@ -1,14 +1,13 @@
 import pickle
-
 import cv2
 
 face_cascade = cv2.CascadeClassifier(
-    "/home/warlock/Downloads/pych/face_recognition/data/haarcascade_frontalface_alt2.xml")
+    "/home/warlock/Downloads/pych/my_project_faced/data/haarcascade_frontalface_alt2.xml")
 face__casade_right = cv2.CascadeClassifier("/home/warlock/Downloads/pych/face_recognition/data/haarcascade_right.xml")
 recognizer = cv2.face.LBPHFaceRecognizer_create()
-recognizer.read("/home/warlock/Downloads/pych/face_recognition/face_recognition_models/recognizers/trainner.yml")
+recognizer.read("/home/warlock/Downloads/pych/my_project_faced/face_recognition_models/recognizers/trainner.yml")
 labels = {"person_name": 1}
-with open("/home/warlock/Downloads/pych/face_recognition/face_recognition_models/pickles/labels.pickles", "rb") as f:
+with open("/home/warlock/Downloads/pych/my_project_faced/face_recognition_models/pickles/labels.pickles", "rb") as f:
     og_labels = pickle.load(f)
     labels = {v: k for k, v in og_labels.items()}
 

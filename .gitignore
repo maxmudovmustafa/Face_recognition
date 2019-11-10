@@ -1,3 +1,5 @@
 /image_classification/cats
 /image_classification/dogs
 /image_classification/Xx.pickle
+/face_recognition/models/shape_predictor_68_face_landmarks.dat
+/README.md
