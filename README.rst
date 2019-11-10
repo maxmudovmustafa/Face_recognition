@@ -52,7 +52,7 @@ chin.
 | Finding facial features is super useful for lots of important stuff.
   But you can also use for really stupid stuff
 | like applying `digital
-  make-up <https://github.com/ageitgey/face_recognition/blob/master/examples/digital_makeup.py>`__
+  make-up <https://github.com/MrShoxruxbek/face_recognition/blob/master/examples/digital_makeup.py>`__
   (think 'Meitu'):
 
 |image5|

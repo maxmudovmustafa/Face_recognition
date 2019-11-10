@@ -27,9 +27,9 @@ setup(
     version='1.2.3',
     description="Recognize faces from Python or from the command line",
     long_description=readme + '\n\n' + history,
-    author="Adam Geitgey",
-    author_email='ageitgey@gmail.com',
-    url='https://github.com/ageitgey/face_recognition',
+    author="Shoxruxbek Maxmudov",
+    author_email='shohruh.maxmudov@mail.ru',
+    url='https://github.com/MrShoxruxbek/face_recognition',
     packages=[
         'face_recognition',
     ],
@@ -60,6 +60,6 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
     ],
-    test_suite='tests',
+    test_suite='image_classification',
     tests_require=test_requirements
 )

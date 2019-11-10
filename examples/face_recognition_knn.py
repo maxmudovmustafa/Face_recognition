@@ -35,7 +35,7 @@ import math
 from sklearn import neighbors
 import os
 import os.path
-import pickle
+from detects import pickles
 from PIL import Image, ImageDraw
 import face_recognition
 from face_recognition.face_recognition_cli import image_files_in_folder
@@ -103,7 +103,7 @@ def train(train_dir, model_save_path=None, n_neighbors=None, knn_algo='ball_tree
     # Save the trained KNN classifier
     if model_save_path is not None:
         with open(model_save_path, 'wb') as f:
-            pickle.dump(knn_clf, f)
+            pickles.dump(knn_clf, f)
 
     return knn_clf
 
@@ -129,7 +129,7 @@ def predict(X_img_path, knn_clf=None, model_path=None, distance_threshold=0.6):
     # Load a trained KNN model (if one was passed in)
     if knn_clf is None:
         with open(model_path, 'rb') as f:
-            knn_clf = pickle.load(f)
+            knn_clf = pickles.load(f)
 
     # Load image file and find face locations
     X_img = face_recognition.load_image_file(X_img_path)

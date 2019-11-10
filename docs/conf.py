@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# face_recognition documentation build configuration file, created by
-# sphinx-quickstart on Tue Jul  9 22:26:36 2013.
-#
 # This file is execfile()d with the current directory set to its
 # containing dir.
 #
@@ -65,7 +62,6 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Face Recognition'
-copyright = u"2017, Adam Geitgey"
 
 # The version info for the project you're documenting, acts as replacement
 # for |version| and |release|, also used in various other places throughout
@@ -184,7 +180,6 @@ html_static_path = ['_static']
 # Default is True.
 #html_show_sphinx = True
 
-# If true, "(C) Copyright ..." is shown in the HTML footer.
 # Default is True.
 #html_show_copyright = True
 
@@ -219,7 +214,7 @@ latex_elements = {
 latex_documents = [
     ('index', 'face_recognition.tex',
      u'Face Recognition Documentation',
-     u'Adam Geitgey', 'manual'),
+     u'Shoxruxebk Maxmudov', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at
@@ -250,7 +245,7 @@ latex_documents = [
 man_pages = [
     ('index', 'face_recognition',
      u'Face Recognition Documentation',
-     [u'Adam Geitgey'], 1)
+     [u'Shoxruxebk Maxmudov'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -265,7 +260,7 @@ man_pages = [
 texinfo_documents = [
     ('index', 'face_recognition',
      u'Face Recognition Documentation',
-     u'Adam Geitgey',
+     u'Shoxruxebk Maxmudov',
      'face_recognition',
      'One line description of project.',
      'Miscellaneous'),

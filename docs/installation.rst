@@ -32,13 +32,13 @@ You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/ageitgey/face_recognition
+    $ git clone git://github.com/MrShoxruxbek/face_recognition
 
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl  -OL https://github.com/ageitgey/face_recognition/tarball/master
+    $ curl  -OL https://github.com/MrShoxruxbek/face_recognition/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
@@ -47,5 +47,5 @@ Once you have a copy of the source, you can install it with:
     $ python setup.py install
 
 
-.. _Github repo: https://github.com/ageitgey/face_recognition
-.. _tarball: https://github.com/ageitgey/face_recognition/tarball/master
+.. _Github repo: https://github.com/MrShoxruxbek/face_recognition
+.. _tarball: https://github.com/MrShoxruxbek/face_recognition/tarball/master

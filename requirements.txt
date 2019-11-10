@@ -1,3 +1,6 @@
+tensorflow
+pyttsx3
+imutils
 cv2
 face_recognition_models
 Click>=6.0
