@@ -2,14 +2,26 @@
 Image classyfiication
 
 
-To use Face Recognition in a project
+Finding Face and recognise them:
 
-Detect: ![](https://github.com/MrShoxruxbek/Face_recognition/tree/master/photos/detect/2.png)
+![](/photos/detect/shoxruxbek.jpg)
 
-Format: ![](https://github.com/MrShoxruxbek/Face_recognition/tree/master/photos/detect_face.png)
+![](/photos/detect/2.jpg)
 
-![Detect](https://github.com/MrShoxruxbek/Face_recognition/tree/master/photos/detect_face.png)    
+![](/photos/detect_face.png)
 
-![second](/home/warlock/Downloads/pych/my_project_faced/photos/image/salim.jpg)    
+Finding faces in Picture
+   #Examples
+
+![](/photos/image/shoxruxbek.jpg)
+![](/photos/image/salim.jpg)
+![](/photos/image/kamolldins.jpg)
+![](/photos/image/Johongir.jpg)
+
+Filtering image
+
+![](/photos/filter/before.jpg)    
+
+![](/photos/filter/after.png)    
 
 It's that simple! Check out the examples for more details.
