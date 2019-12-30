@@ -21,7 +21,7 @@ def speak(text):
     engine.runAndWait()
 
 
-first_person = face_recognition.load_image_file("wh.jpg")
+first_person = face_recognition.load_image_file("shoxrux.jpg")
 first_face_encoding = face_recognition.face_encodings(first_person)[0]
 
 second_image = face_recognition.load_image_file("Shoxruxbek.jpg")
@@ -33,7 +33,7 @@ known_face_encodings = [
 ]
 
 known_face_names = [
-    "SHoxruxbek",
+    "Shoxruxbek",
     "Maxmudov Shoxruxbek",
     "Ubaydullayev Johongir",
 ]

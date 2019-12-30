@@ -1,12 +1,13 @@
 import pickle
 import cv2
 
+recognizer = cv2.face.LBPHFaceRecognizer_create()
 face_cascade = cv2.CascadeClassifier(
     "/home/warlock/Downloads/pych/my_project_faced/data/haarcascade_frontalface_alt2.xml")
-face__casade_right = cv2.CascadeClassifier("/home/warlock/Downloads/pych/face_recognition/data/haarcascade_right.xml")
-recognizer = cv2.face.LBPHFaceRecognizer_create()
+
 recognizer.read("/home/warlock/Downloads/pych/my_project_faced/face_recognition_models/recognizers/trainner.yml")
 labels = {"person_name": 1}
+
 with open("/home/warlock/Downloads/pych/my_project_faced/face_recognition_models/pickles/labels.pickles", "rb") as f:
     og_labels = pickle.load(f)
     labels = {v: k for k, v in og_labels.items()}
@@ -25,9 +26,10 @@ while True:
         roi_grey = grey[y: y + h, x:x + w]
         # cv2.imwrite("my_image.png")
         # print x
+
         id_, conf = recognizer.predict(roi_grey)
-        print conf
-        if 70 <= conf < 100:
+
+        if 0 <= conf < 70:
             font = cv2.FONT_HERSHEY_SIMPLEX
             name = labels[id_]
             color = (255, 100, 100)

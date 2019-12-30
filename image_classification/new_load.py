@@ -7,8 +7,8 @@ import numpy as np
 DATADIR = os.path.dirname(os.path.abspath(__file__))
 
 print DATADIR
-CATEGORIES = ["cats", "dogs"]
-IMG_SIZE = 100
+CATEGORIES = ["shoxruxbek"]
+IMG_SIZE = 50
 for category in CATEGORIES:  # do dogs and cats
     path = os.path.join(DATADIR, category)  # create path to dogs and cats
     for img in os.listdir(path):  # iterate over each image per dogs and cats
@@ -59,11 +59,11 @@ X = np.array(X).reshape(-1, IMG_SIZE, IMG_SIZE, 1)
 
 import pickle
 
-pickle_out = open("Xx.pickle", "wb")
+pickle_out = open("people.pickle", "wb")
 pickle.dump(X, pickle_out)
 pickle_out.close()
 
 
-pickle_out = open("yy.pickle", "wb")
+pickle_out = open("peoplel.pickle", "wb")
 pickle.dump(y, pickle_out)
 pickle_out.close()
