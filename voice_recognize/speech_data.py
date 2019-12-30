@@ -292,7 +292,7 @@ class DataSet(object):
 width = 150
 height = 150
 def next_batch(self, batch_size, fake_data=False):
-        """Return the next `batch_size` examples from this data set."""
+        """Return the next `batch_size` just_test from this data set."""
         if fake_data:
             fake_image = [1] * width * height
             if self.one_hot:
