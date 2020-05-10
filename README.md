@@ -10,14 +10,6 @@ Finding Face and recognise them:
 
 ![](/photos/detect_face.png)
 
-Finding faces in Picture
-   #Examples
-
-![](/photos/image/shoxruxbek.jpg)
-![](/photos/image/salim.jpg)
-![](/photos/image/kamolldins.jpg)
-![](/photos/image/Johongir.jpg)
-
 Filtering image
 
 ![](/photos/filter/before.jpg)    
